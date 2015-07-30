@@ -6,7 +6,7 @@
   <HelpersPrefix>MVC</HelpersPrefix>
   <!--Namespaces to be referenced by the generated code-->
   <ReferencedNamespaces>
-    <!--<Namespace></Namespace>-->
+    <Namespace>TextMatch.UI.Web.Models.Home</Namespace>
   </ReferencedNamespaces>
   <!--The folder under the project that contains the areas-->
   <AreasFolder>Areas</AreasFolder>

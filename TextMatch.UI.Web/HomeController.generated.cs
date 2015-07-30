@@ -23,11 +23,10 @@ using System.Web.Mvc.Ajax;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
 using T4MVC;
+using TextMatch.UI.Web.Models.Home;
 namespace TextMatch.UI.Web.Controllers
 {
-	using TextMatch.UI.Web.Models.Home;
-
-	public partial class HomeController
+    public partial class HomeController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public HomeController() { }

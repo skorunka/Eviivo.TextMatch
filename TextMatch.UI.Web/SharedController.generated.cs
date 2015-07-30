@@ -23,6 +23,7 @@ using System.Web.Mvc.Ajax;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
 using T4MVC;
+using TextMatch.UI.Web.Models.Home;
 namespace T4MVC
 {
     public class SharedController

@@ -2,7 +2,7 @@
 
 <div class="form-group">
 	@Html.LabelFor(x => x.Text)
-	@Html.TextBoxFor(x => x.Text, new { @class = "form-control col-md-12", placeholder = "enter text to search in" })
+	@Html.TextBoxFor(x => x.Text, new { @class = "form-control", placeholder = "enter text to search in" })
 	@Html.ValidationMessageFor(x => x.Text)
 </div>
 

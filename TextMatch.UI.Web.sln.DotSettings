@@ -1,5 +1,4 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=B04DE4E7E726F0468C38F0C477547604/AbsolutePath/@EntryValue">C:\Projects\Source\_sandbox\Eviivo.TextMatch\_shared\R#.DotSettings</s:String>
 	<s:String x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=B04DE4E7E726F0468C38F0C477547604/RelativePath/@EntryValue">..\_shared\R#.DotSettings</s:String>
 	<s:Boolean x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=B04DE4E7E726F0468C38F0C477547604/@KeyIndexDefined">True</s:Boolean>
 	<s:Boolean x:Key="/Default/Environment/InjectedLayers/InjectedLayerCustomization/=FileB04DE4E7E726F0468C38F0C477547604/@KeyIndexDefined">True</s:Boolean>
