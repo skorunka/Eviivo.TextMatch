@@ -1,35 +1,47 @@
 ﻿namespace TextMatch.Services
 {
-	using System.Collections;
 	using System.Collections.Generic;
+	using System.Threading.Tasks;
 
 	public static class StringUtilities
 	{
-		public static ICollection<int> GetSubtextPositions(string text, string subText)
+		public static ICollection<int> GetSubTextPositions(string text, string subText)
 		{
-			var sub = subText.ToCharArray();
+			text = text.ToLower();
+			subText = subText.ToLower();
 
-			var positions = new List<int>(sub.Length);
+			var positions = new List<int>();
 
-			for (var i = 0; i < text.Length; i++)
-			{
-				var found = true;
-				for (var j = 0; j < sub.Length; j++)
-				{
-					if (text[i + j] != sub[j])
+			Parallel.For(0, text.Length,
+				position =>
 					{
-						found = false;
-						break;
-					}
-				}
+						var matchFound = IsSubTextOnPosition(position, text, subText);
 
-				if (found)
+						if (matchFound)
+						{
+							positions.Add(position + 1);
+						}
+					});
+
+			return positions;
+		}
+
+		private static bool IsSubTextOnPosition(int position, string text, string subText)
+		{
+			if (position > text.Length - subText.Length)
+			{
+				return false;
+			}
+
+			for (var i = 0; i < subText.Length; i++)
+			{
+				if (text[position + i] != subText[i])
 				{
-					positions.Add(i);
+					return false;
 				}
 			}
 
-			return positions;
+			return true;
 		}
 	}
 }
