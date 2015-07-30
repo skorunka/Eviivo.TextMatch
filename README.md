@@ -1,5 +1,10 @@
 # eviivo Unattended MVC C# Coding Test
 
+## Implementation notes
+
+- Implementing functionality as a "Service" would be an overkill. To keep it simple I decided to use "static class" pattern.
+- No need to UnitTest MVC controllers. Some UI oriented tests cound be introduced, or a BDD tests using SpecFlow.
+
 ## Instructions
 
 - Spend no longer than three hours on this problem. 
