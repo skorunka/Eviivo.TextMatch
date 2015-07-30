@@ -17,7 +17,7 @@
 - The results/output text should only contain the character positions with a comma between each position.  No spaces or other formatting should be returned.
 - The matches should be displayed within the MVC app.
 
-# Examples of Test Dat:
+# Examples of Test Data
 
 Input text is "Polly put the kettle on, polly put the kettle on, polly put the kettle on we’ll all have tea"
 
