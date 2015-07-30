@@ -21,30 +21,20 @@
 
 Input text is "Polly put the kettle on, polly put the kettle on, polly put the kettle on we’ll all have tea"
 
-Subtext
-	Polly
-Output
-	1, 26, 51
+	Subtext: Polly
+	Output: 1, 26, 51
 	
-Subtext
-	Polly
-Output
-	1, 26, 51
+	Subtext: Polly
+	Output: 1, 26, 51
 	
-Subtext
-	ll (ell ell)
-Output
-	3, 28, 53, 78, 82
+	Subtext: ll (ell ell)
+	Output: 3, 28, 53, 78, 82
 	
-Subtext
-	X
-Output
-	There is no output
+	Subtext: X
+	Output: There is no output
 	
-Subtext
-	Polx
-Output
-	There is no output
+	Subtext: Polx
+	Output: There is no output
 
 Your code will be assessed as if it was a commercial application. Your submission should include a Visual studio solution of your program. 
 
