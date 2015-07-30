@@ -70,6 +70,7 @@ namespace Links
         private const string URLPATH = "~/Scripts";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+        public static readonly string _extensions_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/_extensions.min.js") ? Url("_extensions.min.js") : Url("_extensions.js");
         public static readonly string _references_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/_references.min.js") ? Url("_references.min.js") : Url("_references.js");
         public static readonly string bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bootstrap.min.js") ? Url("bootstrap.min.js") : Url("bootstrap.js");
         public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
@@ -85,6 +86,7 @@ namespace Links
         public static readonly string modernizr_2_6_2_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/modernizr-2.6.2.min.js") ? Url("modernizr-2.6.2.min.js") : Url("modernizr-2.6.2.js");
         public static readonly string respond_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/respond.min.js") ? Url("respond.min.js") : Url("respond.js");
         public static readonly string respond_min_js = Url("respond.min.js");
+        public static readonly string site_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/site.min.js") ? Url("site.min.js") : Url("site.js");
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -107,6 +109,7 @@ namespace Links
         {
             public static class Assets
             {
+                public const string _extensions_js = "~/Scripts/_extensions.js"; 
                 public const string _references_js = "~/Scripts/_references.js"; 
                 public const string bootstrap_js = "~/Scripts/bootstrap.js"; 
                 public const string bootstrap_min_js = "~/Scripts/bootstrap.min.js"; 
@@ -120,6 +123,7 @@ namespace Links
                 public const string modernizr_2_6_2_js = "~/Scripts/modernizr-2.6.2.js"; 
                 public const string respond_js = "~/Scripts/respond.js"; 
                 public const string respond_min_js = "~/Scripts/respond.min.js"; 
+                public const string site_js = "~/Scripts/site.js"; 
             }
         }
         public static partial class Content 

@@ -2,8 +2,7 @@
 {
 	using System.Web.Mvc;
 
-	public abstract class BaseController : Controller
+	public abstract partial class BaseController : Controller
 	{
-		
 	}
 }

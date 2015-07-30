@@ -134,6 +134,20 @@ namespace TextMatch.Services.Tests
 			CollectionAssert.Contains(result, 2);
 		}
 
+		[Test]
+		public void EnsureTheResultIsInAscendantOrdered()
+		{
+			var text = new string('a', 10000);
+			var subText = "a";
+
+			var result = StringUtilities.GetSubTextPositions(text, subText);
+
+			Assert.IsNotNull(result);
+			CollectionAssert.IsNotEmpty(result);
+			Assert.AreEqual(text.Length, result.Count);
+			CollectionAssert.IsOrdered(result);
+		}
+
 		[Test, Category("DataDriven")]
 		[ExpectedException(typeof(ArgumentException))]
 		[TestCase(null), TestCase("")]

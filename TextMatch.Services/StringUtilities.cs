@@ -1,7 +1,9 @@
 ﻿namespace TextMatch.Services
 {
 	using System;
+	using System.Collections.Concurrent;
 	using System.Collections.Generic;
+	using System.Linq;
 	using System.Threading.Tasks;
 
 	public static class StringUtilities
@@ -26,7 +28,7 @@
 			text = text.ToLower();
 			subText = subText.ToLower();
 
-			var positions = new List<int>();
+			var positions = new ConcurrentBag<int>();
 
 			Parallel.For(0, text.Length,
 				position =>
@@ -39,7 +41,7 @@
 						}
 					});
 
-			return positions;
+			return positions.OrderBy(x => x).ToList();
 		}
 
 		private static bool IsSubTextOnPosition(int position, string text, string subText)

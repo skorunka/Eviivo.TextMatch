@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextMatch.UI.Web", "TextMatch.UI.Web\TextMatch.UI.Web.csproj", "{89252BC8-8C6C-4CC1-8385-470FADCDD6D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextMatch.UI.Web.Tests", "TextMatch.UI.Web.Tests\TextMatch.UI.Web.Tests.csproj", "{AEFA26CC-FEC9-4AD8-9DE6-1D5E4BF22BEF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextMatch.Services", "TextMatch.Services\TextMatch.Services.csproj", "{C4F4C73A-CD03-430F-B2B0-D60553392A15}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextMatch.Services.Tests", "TextMatch.Services.Tests\TextMatch.Services.Tests.csproj", "{49E1D98B-BB45-4630-8111-B8B2E4A31CCB}"
@@ -28,10 +26,6 @@ Global
 		{89252BC8-8C6C-4CC1-8385-470FADCDD6D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89252BC8-8C6C-4CC1-8385-470FADCDD6D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89252BC8-8C6C-4CC1-8385-470FADCDD6D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AEFA26CC-FEC9-4AD8-9DE6-1D5E4BF22BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AEFA26CC-FEC9-4AD8-9DE6-1D5E4BF22BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AEFA26CC-FEC9-4AD8-9DE6-1D5E4BF22BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AEFA26CC-FEC9-4AD8-9DE6-1D5E4BF22BEF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C4F4C73A-CD03-430F-B2B0-D60553392A15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C4F4C73A-CD03-430F-B2B0-D60553392A15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4F4C73A-CD03-430F-B2B0-D60553392A15}.Release|Any CPU.ActiveCfg = Release|Any CPU

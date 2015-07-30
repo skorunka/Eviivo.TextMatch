@@ -1,24 +1,23 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿/*-------------------------------------------------------------*/
+/* Validation
+/*-------------------------------------------------------------*/
+.field-validation-valid {
+	display: none !important;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.field-validation-error {
+	color: #FF0000;
+	font-weight: bold;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+input.error, input.input-validation-error {
+	border: 1px solid #B94A48 !important;
+	background-color: #fee !important;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(236, 82, 125, 0.6) !important;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(236, 82, 125, 0.6) !important;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.form-group.required .control-label:first-child:after, .control-label.required {
+	content: " *";
+	color: red;
 }

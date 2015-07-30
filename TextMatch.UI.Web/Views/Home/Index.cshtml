@@ -1,9 +1,21 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model TextMatch.UI.Web.Models.Home.IndexViewModel
+
+@if (null != Model.SubTextPositionsResult)
+{
+	<div class="row">
+		<div class="col-md-12">
+			@Html.DisplayFor(x => x.SubTextPositionsResult)
+		</div>
+	</div>
 }
 
 <div class="row">
-    <div class="col-md-12">
-      Form
-    </div>
+	<div class="col-md-12">
+		@using (Html.BeginForm(MVC.Home.ActionNames.GetSubTextPositions, MVC.Home.Name, FormMethod.Post))
+		{
+			@Html.EditorFor(x => x.GetSubTextPositionsForm)
+			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="button" class="btn btn-default" data-type="clear">Clear</button>
+		}
+	</div>
 </div>

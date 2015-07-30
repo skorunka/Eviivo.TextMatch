@@ -25,7 +25,9 @@ using System.Web.Routing;
 using T4MVC;
 namespace TextMatch.UI.Web.Controllers
 {
-    public partial class HomeController
+	using TextMatch.UI.Web.Models.Home;
+
+	public partial class HomeController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public HomeController() { }
@@ -59,6 +61,12 @@ namespace TextMatch.UI.Web.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult GetSubTextPositions()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetSubTextPositions);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public HomeController Actions { get { return MVC.Home; } }
@@ -76,19 +84,25 @@ namespace TextMatch.UI.Web.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
-            public readonly string About = "About";
-            public readonly string Contact = "Contact";
+            public readonly string GetSubTextPositions = "GetSubTextPositions";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
-            public const string About = "About";
-            public const string Contact = "Contact";
+            public const string GetSubTextPositions = "GetSubTextPositions";
         }
 
 
+        static readonly ActionParamsClass_GetSubTextPositions s_params_GetSubTextPositions = new ActionParamsClass_GetSubTextPositions();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_GetSubTextPositions GetSubTextPositionsParams { get { return s_params_GetSubTextPositions; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_GetSubTextPositions
+        {
+            public readonly string inputForm = GetSubTextPositionsViewModel.FormName;
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -99,13 +113,23 @@ namespace TextMatch.UI.Web.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string About = "About";
-                public readonly string Contact = "Contact";
                 public readonly string Index = "Index";
             }
-            public readonly string About = "~/Views/Home/About.cshtml";
-            public readonly string Contact = "~/Views/Home/Contact.cshtml";
             public readonly string Index = "~/Views/Home/Index.cshtml";
+            static readonly _DisplayTemplatesClass s_DisplayTemplates = new _DisplayTemplatesClass();
+            public _DisplayTemplatesClass DisplayTemplates { get { return s_DisplayTemplates; } }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public partial class _DisplayTemplatesClass
+            {
+                public readonly string SubTextPositionsResult = "SubTextPositionsResult";
+            }
+            static readonly _EditorTemplatesClass s_EditorTemplates = new _EditorTemplatesClass();
+            public _EditorTemplatesClass EditorTemplates { get { return s_EditorTemplates; } }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public partial class _EditorTemplatesClass
+            {
+                public readonly string SubTextPositionsForm = "SubTextPositionsForm";
+            }
         }
     }
 
@@ -126,24 +150,14 @@ namespace TextMatch.UI.Web.Controllers
         }
 
         [NonAction]
-        partial void AboutOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void GetSubTextPositionsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, TextMatch.UI.Web.Models.Home.GetSubTextPositionsViewModel inputForm);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult About()
+        public override System.Web.Mvc.ActionResult GetSubTextPositions(TextMatch.UI.Web.Models.Home.GetSubTextPositionsViewModel inputForm)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.About);
-            AboutOverride(callInfo);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void ContactOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult Contact()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Contact);
-            ContactOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetSubTextPositions);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, GetSubTextPositionsViewModel.FormName, inputForm);
+            GetSubTextPositionsOverride(callInfo, inputForm);
             return callInfo;
         }
 

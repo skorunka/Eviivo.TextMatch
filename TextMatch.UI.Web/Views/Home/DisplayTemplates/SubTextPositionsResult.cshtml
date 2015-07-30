@@ -1,0 +1,18 @@
+﻿@model ICollection<int>
+
+@if (null == Model)
+{
+	return;
+}
+@if (!Model.Any())
+{
+	<text>
+		<div class="alert alert-info">No results found.</div>
+	</text>
+}
+else
+{
+	<text>
+		<div class="alert alert-success"><strong>Result:</strong> @string.Join(",", Model)</div>
+	</text>
+}
