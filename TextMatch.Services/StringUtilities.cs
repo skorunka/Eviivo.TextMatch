@@ -1,5 +1,6 @@
 ﻿namespace TextMatch.Services
 {
+	using System;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
 
@@ -7,6 +8,21 @@
 	{
 		public static ICollection<int> GetSubTextPositions(string text, string subText)
 		{
+			if (string.IsNullOrEmpty(text))
+			{
+				throw new ArgumentException(nameof(text));
+			}
+
+			if (string.IsNullOrEmpty(subText))
+			{
+				throw new ArgumentException(nameof(subText));
+			}
+
+			if (subText.Length > text.Length)
+			{
+				return new List<int>(0);
+			}
+
 			text = text.ToLower();
 			subText = subText.ToLower();
 

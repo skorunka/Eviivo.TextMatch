@@ -2,6 +2,7 @@
 // ReSharper disable InconsistentNaming
 namespace TextMatch.Services.Tests
 {
+	using System;
 	using System.Collections;
 	using System.Collections.Generic;
 
@@ -54,6 +55,34 @@ namespace TextMatch.Services.Tests
 		}
 
 		[Test]
+		public void SearchShouldBeCaseInsensitive()
+		{
+			var text = "aabb";
+			var subText = "AA";
+
+			var result = StringUtilities.GetSubTextPositions(text, subText);
+
+			Assert.IsNotNull(result);
+			CollectionAssert.IsNotEmpty(result);
+			Assert.AreEqual(1, result.Count);
+			CollectionAssert.Contains(result, 1);
+		}
+
+		[Test]
+		public void ShouldReturnOneWhenLookingForSpaceInSaceA()
+		{
+			var text = " A";
+			var subText = " ";
+
+			var result = StringUtilities.GetSubTextPositions(text, subText);
+
+			Assert.IsNotNull(result);
+			CollectionAssert.IsNotEmpty(result);
+			Assert.AreEqual(1, result.Count);
+			CollectionAssert.Contains(result, 1);
+		}
+
+		[Test]
 		public void ShouldReturnOneWhenLookingForJohnInJohnLennon()
 		{
 			var text = "John Lennon";
@@ -77,6 +106,52 @@ namespace TextMatch.Services.Tests
 
 			Assert.IsNotNull(result);
 			CollectionAssert.IsEmpty(result);
+		}
+
+		[Test]
+		public void ShouldReturnEmptyWhenTextIsWhorterThanSubText()
+		{
+			var text = "AAA";
+			var subText = "AAAA";
+
+			var result = StringUtilities.GetSubTextPositions(text, subText);
+
+			Assert.IsNotNull(result);
+			CollectionAssert.IsEmpty(result);
+		}
+
+		[Test, Description("Ensure the proper handling of special chaacters(new lines, tabs...).")]
+		public void ShouldReturnOneTwoWhenLookingForTabInATabA()
+		{
+			var text = "A\tA";
+			var subText = "\t";
+
+			var result = StringUtilities.GetSubTextPositions(text, subText);
+
+			Assert.IsNotNull(result);
+			CollectionAssert.IsNotEmpty(result);
+			Assert.AreEqual(1, result.Count);
+			CollectionAssert.Contains(result, 2);
+		}
+
+		[Test, Category("DataDriven")]
+		[ExpectedException(typeof(ArgumentException))]
+		[TestCase(null), TestCase("")]
+		public void ShouldThrowArgumentExceptionWhenTextIsNullOrEmpty(string text)
+		{
+			var subText = "a";
+
+			StringUtilities.GetSubTextPositions(text, subText);
+		}
+
+		[Test, Category("DataDriven")]
+		[ExpectedException(typeof(ArgumentException))]
+		[TestCase(null), TestCase("")]
+		public void ShouldThrowArgumentExceptionWhenSubTextIsNullOrEmpty(string subText)
+		{
+			var text = "a";
+
+			StringUtilities.GetSubTextPositions(text, subText);
 		}
 
 		[Test, Category("DataDriven")]
@@ -124,6 +199,11 @@ namespace TextMatch.Services.Tests
 						new TestCaseData(
 							"aaaa",
 							"aa").Returns(new List<int> { 1, 2, 3 });
+
+					yield return
+						new TestCaseData(
+							"   ",
+							"  ").Returns(new List<int> { 1, 2 });
 				}
 			}
 		}
